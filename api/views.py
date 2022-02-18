@@ -41,8 +41,10 @@ class AuthenticationAPIView(APIView):
             return Response({"Authorization": token}, status=status.HTTP_400_BAD_REQUEST)
         response = {
             "data": {
-                "user_id": login.user_id,
-                "user_name": login.user_name
+                "user_info": {
+                    "user_id": login.user_id,
+                    "user_name": login.user_name
+                }
             }
         }
         return Response(response, status=status.HTTP_200_OK)
