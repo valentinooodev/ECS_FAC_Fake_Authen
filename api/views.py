@@ -46,3 +46,10 @@ class AuthenticationAPIView(APIView):
             }
         }
         return Response(response, status=status.HTTP_200_OK)
+
+
+class CheckHealth(APIView):
+
+    def get(self, request, format=None):
+        return Response({"status": "OK"})
+
